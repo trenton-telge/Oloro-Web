@@ -75,8 +75,11 @@
             width:100vw;
             height:100vh;
         }
-        #start {
+        body{
             background-color: #fffbd5;
+            transition: background-color 2s;
+        }
+        #start {
             display:flex;
             flex-wrap: wrap;
             justify-content: space-evenly;
@@ -110,18 +113,33 @@
         }
         #lc {
             display:none;
-            background-color: #fffbd5;
+            transition: background-color 2s;
         }
         .counter-num{
             z-index: 20;
         }
         .counter-top, .counter-bottom{
+            margin:0;
             z-index: 10;
+            width: 90vw;
+            height: calc(50vh - 5vw);
+
         }
+        .counter-red{}
+        .counter-purple{}
+        .counter-blue{}
+        .counter-green{}
+        .counter-orange{}
+        .counter-yellow{}
         .counter-ob-fs {
             margin:5vw;
             display:flex;
-
+            flex-wrap: wrap;
+            align-items: center;
+            align-content: center;
+            justify-content: center;
+            width:90vw;
+            height: calc(100vh - 10vw);
         }
     </style>
     <script rel="script" type="text/javascript">
@@ -129,10 +147,11 @@
         function displayCounter(players) {
             document.getElementById("start").style.display = "none";
             document.getElementById("lc").style.display = "flex";
+            document.body.style.backgroundColor = "#fff";
             switch (players) {
                 case 1:
                     lifeTotals = [40];
-                    document.getElementById("lc").innerHTML = "<div class='counter-ob, counter-ob-fs'><div id='p1-total' class='counter-num'></div><div class='counter-top'></div><div class='counter-bottom'></div></div>";
+                    document.getElementById("lc").innerHTML = "<div class='counter-ob counter-ob-fs'><div id='p1-total' class='counter-num'></div><div class='counter-top'></div><div class='counter-bottom'></div></div>";
                     break;
                 case 2:
                     lifeTotals = [40, 40];
@@ -162,7 +181,7 @@
     </script>
 </head>
 <body>
-<div id="start" class="normalize, full-screen">
+<div id="start" class="normalize full-screen">
     <h3>How many players?</h3>
     <a class="player-count-button" onclick="displayCounter(1)"><p>1</p></a>
     <a class="player-count-button" onclick="displayCounter(2)"><p>2</p></a>
@@ -171,7 +190,7 @@
     <a class="player-count-button" onclick="displayCounter(5)"><p>5</p></a>
     <a class="player-count-button" onclick="displayCounter(6)"><p>6</p></a>
 </div>
-<div id="lc" class="normalize, full-screen">
+<div id="lc" class="normalize full-screen">
 
 </div>
 </body>
