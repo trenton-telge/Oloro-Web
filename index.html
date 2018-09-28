@@ -171,6 +171,14 @@
             justify-content: center;
             width:98vw;
         }
+        .text-inverse{
+            -webkit-transform:rotate(-180deg);
+            -moz-transform:rotate(-180deg);
+            -o-transform:rotate(-180deg);
+            transform:rotate(-180deg);
+            ms-filter:"progid:DXImageTransform.Microsoft.BasicImage(rotation=2)";
+            filter:progid:DXImageTransform.Microsoft.BasicImage(rotation=2);
+        }
         .counter-ob-hs{
             margin:1vw;
             height:calc(50% - 2vw);
@@ -225,7 +233,7 @@
                     break;
                 case 2:
                     lifeTotals = [startingTotal, startingTotal];
-                    document.getElementById("lc").innerHTML = "<div class='counter-ob-hs'><div id='p1-total' class='counter-num'><p></p></div><div class='counter-top-hs counter-green' onclick='lifePlus(1)'></div><div class='counter-bottom-hs counter-green' onclick='lifeMinus(1)'></div></div>" +
+                    document.getElementById("lc").innerHTML = "<div class='counter-ob-hs'><div id='p1-total' class='counter-num text-inverse'><p></p></div><div class='counter-top-hs counter-green' onclick='lifeMinus(1)'></div><div class='counter-bottom-hs counter-green' onclick='lifePlus(1)'></div></div>" +
                         "<div class='counter-ob-hs'><div id='p2-total' class='counter-num'><p></p></div><div class='counter-top-hs counter-red' onclick='lifePlus(2)'></div><div class='counter-bottom-hs counter-red' onclick='lifeMinus(2)'></div></div>";
                     refreshScreen();
                     break;
