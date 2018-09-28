@@ -116,7 +116,22 @@
             transition: background-color 2s;
         }
         .counter-num{
+            pointer-events:none;
             z-index: 20;
+            position: absolute;
+            display:flex;
+            justify-content: space-evenly;
+            align-items: center;
+            align-content: center;
+            text-align: center;
+            width:90vw;
+            height: calc(100vh - 10vw);
+        }
+        .counter-num p {
+            pointer-events:none;
+            color: black;
+            font-size: 1.8in;
+            font-max-size: 80%;
         }
         .counter-top, .counter-bottom{
             margin:0;
@@ -125,12 +140,18 @@
             height: calc(50vh - 5vw);
 
         }
-        .counter-red{}
-        .counter-purple{}
-        .counter-blue{}
-        .counter-green{}
-        .counter-orange{}
-        .counter-yellow{}
+        .counter-top{
+            border-radius: 25px 25px 0 0;
+        }
+        .counter-bottom{
+            border-radius: 0 0 25px 25px;
+        }
+        .counter-red{background-color: lightcoral;}
+        .counter-purple{background-color: plum;}
+        .counter-blue{background-color: darkturquoise;}
+        .counter-green{background-color: palegreen;}
+        .counter-orange{background-color: darkgoldenrod;}
+        .counter-yellow{background-color: khaki;}
         .counter-ob-fs {
             margin:5vw;
             display:flex;
@@ -144,29 +165,59 @@
     </style>
     <script rel="script" type="text/javascript">
         var lifeTotals;
+        var startingTotal = 40;
+        var numPlayers = 1;
+        function refreshScreen(){
+            for(var i = 1;i<=numPlayers;i++){
+                switch (i) {
+                    case 1:
+                        document.getElementById("p1-total").innerHTML = "<p>" + lifeTotals[i - 1].toString() + "</p>";
+                        break;
+                    case 2:
+                        document.getElementById("p2-total").innerHTML = "<p>" + lifeTotals[i - 1].toString() + "</p>";
+                        break;
+                    case 3:
+                        document.getElementById("p3-total").innerHTML = "<p>" + lifeTotals[i - 1].toString() + "</p>";
+                        break;
+                    case 4:
+                        document.getElementById("p4-total").innerHTML = "<p>" + lifeTotals[i - 1].toString() + "</p>";
+                        break;
+                    case 5:
+                        document.getElementById("p5-total").innerHTML = "<p>" + lifeTotals[i - 1].toString() + "</p>";
+                        break;
+                    case 6:
+                        document.getElementById("p6-total").innerHTML = "<p>" + lifeTotals[i - 1].toString() + "</p>";
+                        break;
+                    default:
+                        break;
+                }
+            }
+        }
         function displayCounter(players) {
             document.getElementById("start").style.display = "none";
             document.getElementById("lc").style.display = "flex";
             document.body.style.backgroundColor = "#fff";
+            numPlayers = players;
             switch (players) {
                 case 1:
-                    lifeTotals = [40];
-                    document.getElementById("lc").innerHTML = "<div class='counter-ob counter-ob-fs'><div id='p1-total' class='counter-num'></div><div class='counter-top'></div><div class='counter-bottom'></div></div>";
+                    lifeTotals = [startingTotal];
+                    document.getElementById("lc").innerHTML = "<div class='counter-ob counter-ob-fs'><div id='p1-total' class='counter-num'><p></p></div><div class='counter-top counter-green' onclick='lifePlus(1)'></div><div class='counter-bottom counter-green' onclick='lifeMinus(1)'></div></div>";
+                    refreshScreen();
                     break;
                 case 2:
-                    lifeTotals = [40, 40];
+                    lifeTotals = [startingTotal, startingTotal];
                     break;
                 case 3:
-                    lifeTotals = [40, 40, 40];
+                    lifeTotals = [startingTotal, startingTotal, startingTotal];
                     break;
                 case 4:
-                    lifeTotals = [40, 40, 40, 40];
+                    lifeTotals = [startingTotal, startingTotal, startingTotal, startingTotal];
                     break;
                 case 5:
-                    lifeTotals = [40, 40, 40, 40, 40];
+                    lifeTotals = [startingTotal, startingTotal, startingTotal, startingTotal, startingTotal];
                     break;
                 case 6:
-                    lifeTotals = [40, 40, 40, 40, 40, 40];
+                    lifeTotals = [startingTotal, startingTotal, startingTotal, startingTotal, startingTotal, startingTotal];
                     break;
                 default:
                     break;
@@ -174,9 +225,11 @@
         }
         function lifePlus(playerID){
             lifeTotals[playerID - 1]++;
+            refreshScreen();
         }
         function lifeMinus(playerID){
             lifeTotals[playerID -1]--;
+            refreshScreen()
         }
     </script>
 </head>
