@@ -40,7 +40,7 @@
     <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
     <link rel="icon" type="image/png" sizes="192x192" href="/android-chrome-192x192.png">
     <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
-    <link rel="manifest" href="/manifest.json">
+    <link rel="manifest" href="manifest.json">
     <link rel="mask-icon" href="/safari-pinned-tab.svg" color="#000000">
     <meta name="apple-mobile-web-app-title" content="Oloro">
     <meta name="application-name" content="Oloro">
@@ -67,7 +67,7 @@
         }
     </script>
     <style>
-        .normalize, html, body {
+        .normalize, html, body, div, a {
             margin:0;
             padding:0;
         }
@@ -77,14 +77,29 @@
         }
         #start {
             background-color: #fffbd5;
+            display:flex;
+            flex-wrap: wrap;
+            justify-content: space-evenly;
+            align-items: center;
+            align-content: center;
+        }
+        .player-count-button {
+            width: 35vw;
+            height: 35vw;
+            background-color: #8ab5ca;
+            text-align: center;
+            color: black;
+        }
+        #lc {
+            display:none;
         }
     </style>
 </head>
 <body>
 <div id="start" class="normalize, full-screen">
-
+    <a class="player-count-button">1</a>
 </div>
-<div id="lc-1" class="normalize, full-screen">
+<div id="lc" class="normalize, full-screen">
 
 </div>
 </body>
