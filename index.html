@@ -102,19 +102,74 @@
             font-size: 1.8in;
             font-max-size: 80%;
         }
+        h3 {
+            color:black;
+            font-size:2vw;
+            width: 100vw;
+            text-align:center;
+        }
         #lc {
             display:none;
+            background-color: #fffbd5;
+        }
+        .counter-num{
+            z-index: 20;
+        }
+        .counter-top, .counter-bottom{
+            z-index: 10;
+        }
+        .counter-ob-fs {
+            margin:5vw;
+            display:flex;
+
         }
     </style>
+    <script rel="script" type="text/javascript">
+        var lifeTotals;
+        function displayCounter(players) {
+            document.getElementById("start").style.display = "none";
+            document.getElementById("lc").style.display = "flex";
+            switch (players) {
+                case 1:
+                    lifeTotals = [40];
+                    document.getElementById("lc").innerHTML = "<div class='counter-ob, counter-ob-fs'><div id='p1-total' class='counter-num'></div><div class='counter-top'></div><div class='counter-bottom'></div></div>";
+                    break;
+                case 2:
+                    lifeTotals = [40, 40];
+                    break;
+                case 3:
+                    lifeTotals = [40, 40, 40];
+                    break;
+                case 4:
+                    lifeTotals = [40, 40, 40, 40];
+                    break;
+                case 5:
+                    lifeTotals = [40, 40, 40, 40, 40];
+                    break;
+                case 6:
+                    lifeTotals = [40, 40, 40, 40, 40, 40];
+                    break;
+                default:
+                    break;
+            }
+        }
+        function lifePlus(playerID){
+            lifeTotals[playerID - 1]++;
+        }
+        function lifeMinus(playerID){
+            lifeTotals[playerID -1]--;
+        }
+    </script>
 </head>
 <body>
 <div id="start" class="normalize, full-screen">
-    <a class="player-count-button"><p>1</p></a>
-    <a class="player-count-button"><p>2</p></a>
-    <a class="player-count-button"><p>3</p></a>
-    <a class="player-count-button"><p>4</p></a>
-    <a class="player-count-button"><p>5</p></a>
-    <a class="player-count-button"><p>6</p></a>
+    <h3>How many players?</h3>
+    <a class="player-count-button" onclick="displayCounter(1)"><p>1</p></a>
+    <a class="player-count-button" onclick="displayCounter(2)"><p>2</p></a>
+    <a class="player-count-button" onclick="displayCounter(3)"><p>3</p></a>
+    <a class="player-count-button" onclick="displayCounter(4)"><p>4</p></a>
+    <a class="player-count-button" onclick="displayCounter(5)"><p>5</p></a>
+    <a class="player-count-button" onclick="displayCounter(6)"><p>6</p></a>
 </div>
 <div id="lc" class="normalize, full-screen">
 
