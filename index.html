@@ -78,6 +78,7 @@
         body{
             background-color: #fffbd5;
             transition: background-color 2s;
+            overflow: hidden;
         }
         #start {
             display:flex;
@@ -107,13 +108,14 @@
         }
         h3 {
             color:black;
-            font-size:2vw;
+            font-size:6vw;
             width: 100vw;
             text-align:center;
         }
         #lc {
             display:none;
             transition: background-color 2s;
+            flex-wrap: wrap;
         }
         .counter-num{
             pointer-events:none;
@@ -125,7 +127,7 @@
             align-content: center;
             text-align: center;
             width:90vw;
-            height: calc(100vh - 10vw);
+            height: calc(100vh - 2vw);
         }
         .counter-num p {
             pointer-events:none;
@@ -133,17 +135,24 @@
             font-size: 1.8in;
             font-max-size: 80%;
         }
-        .counter-top, .counter-bottom{
+        .counter-top-fs, .counter-bottom-fs{
+            height: 50%;
             margin:0;
             z-index: 10;
             width: 90vw;
-            height: calc(50vh - 5vw);
 
         }
-        .counter-top{
+        .counter-top-hs, .counter-bottom-hs{
+            height: 50%;
+            margin:0;
+            z-index: 10;
+            width: 90vw;
+
+        }
+        .counter-top-fs, .counter-top-hs{
             border-radius: 25px 25px 0 0;
         }
-        .counter-bottom{
+        .counter-bottom-fs, .counter-bottom-hs{
             border-radius: 0 0 25px 25px;
         }
         .counter-red{background-color: lightcoral;}
@@ -153,14 +162,24 @@
         .counter-orange{background-color: darkgoldenrod;}
         .counter-yellow{background-color: khaki;}
         .counter-ob-fs {
-            margin:5vw;
+            margin:1vw;
+            height: calc(100% - 2vw);
             display:flex;
             flex-wrap: wrap;
             align-items: center;
             align-content: center;
             justify-content: center;
-            width:90vw;
-            height: calc(100vh - 10vw);
+            width:98vw;
+        }
+        .counter-ob-hs{
+            margin:1vw;
+            height:calc(50% - 2vw);
+            display:flex;
+            flex-wrap: wrap;
+            align-items: center;
+            align-content: center;
+            justify-content: center;
+            width:98vw;
         }
     </style>
     <script rel="script" type="text/javascript">
@@ -201,11 +220,14 @@
             switch (players) {
                 case 1:
                     lifeTotals = [startingTotal];
-                    document.getElementById("lc").innerHTML = "<div class='counter-ob counter-ob-fs'><div id='p1-total' class='counter-num'><p></p></div><div class='counter-top counter-green' onclick='lifePlus(1)'></div><div class='counter-bottom counter-green' onclick='lifeMinus(1)'></div></div>";
+                    document.getElementById("lc").innerHTML = "<div class='counter-ob-fs'><div id='p1-total' class='counter-num'><p></p></div><div class='counter-top-fs counter-green' onclick='lifePlus(1)'></div><div class='counter-bottom-fs counter-green' onclick='lifeMinus(1)'></div></div>";
                     refreshScreen();
                     break;
                 case 2:
                     lifeTotals = [startingTotal, startingTotal];
+                    document.getElementById("lc").innerHTML = "<div class='counter-ob-hs'><div id='p1-total' class='counter-num'><p></p></div><div class='counter-top-hs counter-green' onclick='lifePlus(1)'></div><div class='counter-bottom-hs counter-green' onclick='lifeMinus(1)'></div></div>" +
+                        "<div class='counter-ob-hs'><div id='p2-total' class='counter-num'><p></p></div><div class='counter-top-hs counter-red' onclick='lifePlus(2)'></div><div class='counter-bottom-hs counter-red' onclick='lifeMinus(2)'></div></div>";
+                    refreshScreen();
                     break;
                 case 3:
                     lifeTotals = [startingTotal, startingTotal, startingTotal];
