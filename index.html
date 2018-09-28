@@ -135,24 +135,29 @@
             font-size: 1.8in;
             font-max-size: 80%;
         }
-        .counter-top-fs, .counter-bottom-fs{
+        .counter-top-fs, .counter-bottom-fs, .counter-top-hs, .counter-bottom-hs, .counter-top-ts-b, .counter-bottom-ts-b{
             height: 50%;
             margin:0;
             z-index: 10;
-            width: 90vw;
+            width: 94vw;
 
         }
-        .counter-top-hs, .counter-bottom-hs{
-            height: 50%;
+        .counter-top-ts-r, .counter-top-ts-l, .counter-bottom-ts-r, .counter-bottom-ts-l {
+            width: 50%;
             margin:0;
             z-index: 10;
-            width: 90vw;
-
+            height: calc(60vh - 3vw);
         }
-        .counter-top-fs, .counter-top-hs{
+        .counter-top-ts-l, .counter-bottom-ts-r{
+            border-radius: 0 25px 25px 0;
+        }
+        .counter-bottom-ts-l, .counter-top-ts-r{
+            border-radius: 25px 0 0 25px;
+        }
+        .counter-top-fs, .counter-top-hs, .counter-top-ts-b{
             border-radius: 25px 25px 0 0;
         }
-        .counter-bottom-fs, .counter-bottom-hs{
+        .counter-bottom-fs, .counter-bottom-hs, .counter-bottom-ts-b{
             border-radius: 0 0 25px 25px;
         }
         .counter-red{background-color: lightcoral;}
@@ -171,14 +176,6 @@
             justify-content: center;
             width:98vw;
         }
-        .text-inverse{
-            -webkit-transform:rotate(-180deg);
-            -moz-transform:rotate(-180deg);
-            -o-transform:rotate(-180deg);
-            transform:rotate(-180deg);
-            ms-filter:progid:DXImageTransform.Microsoft.BasicImage(rotation=2);
-            filter:progid:DXImageTransform.Microsoft.BasicImage(rotation=2);
-        }
         .counter-ob-hs{
             margin:3vw;
             height:calc(50% - 6vw);
@@ -188,6 +185,54 @@
             align-content: center;
             justify-content: center;
             width:98vw;
+        }
+        .counter-ob-ts-b{
+            margin:3vw;
+            height:calc(40% - 6vw);
+            display:flex;
+            flex-wrap: wrap;
+            align-items: center;
+            align-content: center;
+            justify-content: center;
+            width:98vw;
+        }
+        .counter-ob-ts-l{
+            margin:3vw 1.5vw 0 3vw;
+            height:calc(60% - 3vw);
+            display:flex;
+            flex-wrap: wrap;
+            align-items: center;
+            align-content: center;
+            justify-content: center;
+            width:45.5vw;
+        }
+        .counter-ob-ts-r{
+            margin:3vw 3vw 0 1.5vw;
+            height:calc(60% - 3vw);
+            display:flex;
+            flex-wrap: wrap;
+            align-items: center;
+            align-content: center;
+            justify-content: center;
+            width:45.5vw;
+        }
+        .text-inverse{
+            -webkit-transform:rotate(-180deg);
+            -moz-transform:rotate(-180deg);
+            -o-transform:rotate(-180deg);
+            transform:rotate(-180deg);
+        }
+        .text-left{
+            -webkit-transform:rotate(-270deg);
+            -moz-transform:rotate(-270deg);
+            -o-transform:rotate(-270deg);
+            transform:rotate(-270deg);
+        }
+        .text-right{
+            -webkit-transform:rotate(-90deg);
+            -moz-transform:rotate(-90deg);
+            -o-transform:rotate(-90deg);
+            transform:rotate(-90deg);
         }
     </style>
     <script rel="script" type="text/javascript">
@@ -239,6 +284,10 @@
                     break;
                 case 3:
                     lifeTotals = [startingTotal, startingTotal, startingTotal];
+                    document.getElementById("lc").innerHTML = "<div class='counter-ob-ts-l'><div id='p2-total' class='counter-num text-left'><p></p></div><div class='counter-bottom-ts-l counter-blue' onclick='lifeMinus(2)'></div><div class='counter-top-ts-l counter-blue' onclick='lifePlus(2)'></div></div>" +
+                        "<div class='counter-ob-ts-r'><div id='p3-total' class='counter-num text-right'><p></p></div><div class='counter-top-ts-r counter-red' onclick='lifePlus(3)'></div><div class='counter-bottom-ts-r counter-red' onclick='lifeMinus(3)'></div></div>" +
+                        "<div class='counter-ob-ts-b'><div id='p1-total' class='counter-num'><p></p></div><div class='counter-top-ts-b counter-green' onclick='lifePlus(1)'></div><div class='counter-bottom-ts-b counter-green' onclick='lifeMinus(1)'></div></div>"
+                    refreshScreen();
                     break;
                 case 4:
                     lifeTotals = [startingTotal, startingTotal, startingTotal, startingTotal];
