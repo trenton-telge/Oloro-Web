@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <title>Oloro</title>
-    <script src="/upup.min.js"></script>
+    <script src="upup.min.js"></script>
     <script>
         UpUp.start({
             'content-url': 'index.html',
@@ -65,12 +65,25 @@
             }
         }
     </script>
+    <style>
+        .normalize{
+            margin:0;
+            padding:0;
+        }
+        html, body, .full-screen{
+            width:100vw;
+            height:100vh;
+        }
+        #start{
+            background-color: #fffbd5;
+        }
+    </style>
 </head>
 <body>
-<div id="start">
+<div id="start" class="normalize, full-screen">
 
 </div>
-<div id="lc-1">
+<div id="lc-1" class="normalize, full-screen">
 
 </div>
 </body>
