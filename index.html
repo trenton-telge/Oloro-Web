@@ -47,6 +47,7 @@
     <meta name="msapplication-TileColor" content="#fffbd5">
     <meta name="msapplication-TileImage" content="mstile-144x144.png">
     <meta name="theme-color" content="#fffbd5">
+    <link href="https://fonts.googleapis.com/css?family=Expletus+Sans" rel="stylesheet">
     <script type="application/ld+json">
         {
             "@context": "http://schema.org/",
@@ -70,6 +71,12 @@
         .normalize, html, body, div, a {
             margin:0;
             padding:0;
+        }
+        h3 {
+            font-family: 'Expletus Sans', cursive;
+        }
+        p {
+            font-family: Roboto, sans-serif;
         }
         html, body, .full-screen {
             width:100vw;
@@ -265,6 +272,14 @@
                 }
             }
         }
+        function lifePlus(playerID){
+            lifeTotals[playerID - 1]++;
+            refreshScreen();
+        }
+        function lifeMinus(playerID){
+            lifeTotals[playerID -1]--;
+            refreshScreen()
+        }
         function displayCounter(players) {
             document.getElementById("start").style.display = "none";
             document.getElementById("lc").style.display = "flex";
@@ -301,14 +316,6 @@
                 default:
                     break;
             }
-        }
-        function lifePlus(playerID){
-            lifeTotals[playerID - 1]++;
-            refreshScreen();
-        }
-        function lifeMinus(playerID){
-            lifeTotals[playerID -1]--;
-            refreshScreen()
         }
     </script>
 </head>
