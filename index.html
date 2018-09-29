@@ -142,6 +142,11 @@
             font-size: 1.8in;
             font-max-size: 80%;
         }
+        @media screen and (max-width: 3in){
+            .counter-num p, .player-count-button p {
+                font-size: 1in;
+            }
+        }
         .counter-top-fs, .counter-bottom-fs, .counter-top-hs, .counter-bottom-hs, .counter-top-ts-b, .counter-bottom-ts-b{
             height: 50%;
             margin:0;
@@ -316,12 +321,15 @@
                     break;
                 case 4:
                     lifeTotals = [startingTotal, startingTotal, startingTotal, startingTotal];
+                    refreshScreen();
                     break;
                 case 5:
                     lifeTotals = [startingTotal, startingTotal, startingTotal, startingTotal, startingTotal];
+                    refreshScreen();
                     break;
                 case 6:
                     lifeTotals = [startingTotal, startingTotal, startingTotal, startingTotal, startingTotal, startingTotal];
+                    refreshScreen();
                     break;
                 default:
                     break;
@@ -339,8 +347,6 @@
     <a class="player-count-button" onclick="displayCounter(5)"><p>5</p></a>
     <a class="player-count-button" onclick="displayCounter(6)"><p>6</p></a>
 </div>
-<div id="lc" class="normalize full-screen">
-
-</div>
+<div id="lc" class="normalize full-screen"></div>
 </body>
 </html>
