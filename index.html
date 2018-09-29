@@ -183,9 +183,19 @@
             justify-content: center;
             width:98vw;
         }
-        .counter-ob-hs{
-            margin:3vw;
-            height:calc(50% - 6vw);
+        .counter-ob-hs-top{
+            margin:3vw 3vw 1.5vw 3vw;
+            height:calc(50% - 4.5vw);
+            display:flex;
+            flex-wrap: wrap;
+            align-items: center;
+            align-content: center;
+            justify-content: center;
+            width:98vw;
+        }
+        .counter-ob-hs-bottom{
+            margin:1.5vw 3vw 3vw 3vw;
+            height:calc(50% - 4.5vw);
             display:flex;
             flex-wrap: wrap;
             align-items: center;
@@ -293,8 +303,8 @@
                     break;
                 case 2:
                     lifeTotals = [startingTotal, startingTotal];
-                    document.getElementById("lc").innerHTML = "<div class='counter-ob-hs'><div id='p1-total' class='counter-num text-inverse'><p></p></div><div class='counter-top-hs counter-green' onclick='lifeMinus(1)'></div><div class='counter-bottom-hs counter-green' onclick='lifePlus(1)'></div></div>" +
-                        "<div class='counter-ob-hs'><div id='p2-total' class='counter-num'><p></p></div><div class='counter-top-hs counter-red' onclick='lifePlus(2)'></div><div class='counter-bottom-hs counter-red' onclick='lifeMinus(2)'></div></div>";
+                    document.getElementById("lc").innerHTML = "<div class='counter-ob-hs-top'><div id='p1-total' class='counter-num text-inverse'><p></p></div><div class='counter-top-hs counter-green' onclick='lifeMinus(1)'></div><div class='counter-bottom-hs counter-green' onclick='lifePlus(1)'></div></div>" +
+                        "<div class='counter-ob-hs-bottom'><div id='p2-total' class='counter-num'><p></p></div><div class='counter-top-hs counter-red' onclick='lifePlus(2)'></div><div class='counter-bottom-hs counter-red' onclick='lifeMinus(2)'></div></div>";
                     refreshScreen();
                     break;
                 case 3:
