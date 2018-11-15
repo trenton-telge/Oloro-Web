@@ -266,8 +266,10 @@
             top:calc(50vh - .25in);
         }
         .reset-single{
-            left:calc(50vw - .25in);
             top:10px;
+        }
+        .reset-third{
+            top:calc(60vh - .25in);
         }
     </style>
     <script rel="script" type="text/javascript">
@@ -332,7 +334,7 @@
                     document.getElementById("lc").innerHTML = "<div class='counter-ob-ts-l'><div id='p2-total' class='counter-num text-left'><p></p></div><div class='counter-bottom-ts-l counter-blue' onclick='lifeMinus(2)'></div><div class='counter-top-ts-l counter-blue' onclick='lifePlus(2)'></div></div>" +
                         "<div class='counter-ob-ts-r'><div id='p3-total' class='counter-num text-right'><p></p></div><div class='counter-top-ts-r counter-red' onclick='lifePlus(3)'></div><div class='counter-bottom-ts-r counter-red' onclick='lifeMinus(3)'></div></div>" +
                         "<div class='counter-ob-ts-b'><div id='p1-total' class='counter-num'><p></p></div><div class='counter-top-ts-b counter-green' onclick='lifePlus(1)'></div><div class='counter-bottom-ts-b counter-green' onclick='lifeMinus(1)'></div></div>" +
-                        "<img class='reset-button' onclick='home();' src='oloro-i.svg'  alt='reset'/>";
+                        "<img class='reset-button reset-third' onclick='home();' src='oloro-i.svg'  alt='reset'/>";
                     refreshScreen();
                     break;
                 case 4:
