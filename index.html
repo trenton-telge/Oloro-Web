@@ -262,6 +262,8 @@
             position: fixed;
             height: .5in;
             width: .5in;
+            left:calc(50vw - .25in);
+            top:calc(50vh - .25in);
         }
         .reset-single{
             left:calc(50vw - .25in);
@@ -314,20 +316,23 @@
             switch (players) {
                 case 1:
                     lifeTotals = [startingTotal];
-                    document.getElementById("lc").innerHTML = "<div class='counter-ob-fs'><div id='p1-total' class='counter-num'><p></p></div><div class='counter-top-fs counter-green' onclick='lifePlus(1)'></div><div class='counter-bottom-fs counter-green' onclick='lifeMinus(1)'></div></div><img class='reset-button reset-single' onclick='home();' src='oloro-i.svg'  alt='reset'/>";
+                    document.getElementById("lc").innerHTML = "<div class='counter-ob-fs'><div id='p1-total' class='counter-num'><p></p></div><div class='counter-top-fs counter-green' onclick='lifePlus(1)'></div><div class='counter-bottom-fs counter-green' onclick='lifeMinus(1)'></div></div>" +
+                        "<img class='reset-button reset-single' onclick='home();' src='oloro-i.svg'  alt='reset'/>";
                     refreshScreen();
                     break;
                 case 2:
                     lifeTotals = [startingTotal, startingTotal];
                     document.getElementById("lc").innerHTML = "<div class='counter-ob-hs-top'><div id='p1-total' class='counter-num text-inverse'><p></p></div><div class='counter-top-hs counter-green' onclick='lifeMinus(1)'></div><div class='counter-bottom-hs counter-green' onclick='lifePlus(1)'></div></div>" +
-                        "<div class='counter-ob-hs-bottom'><div id='p2-total' class='counter-num'><p></p></div><div class='counter-top-hs counter-red' onclick='lifePlus(2)'></div><div class='counter-bottom-hs counter-red' onclick='lifeMinus(2)'></div></div>";
+                        "<div class='counter-ob-hs-bottom'><div id='p2-total' class='counter-num'><p></p></div><div class='counter-top-hs counter-red' onclick='lifePlus(2)'></div><div class='counter-bottom-hs counter-red' onclick='lifeMinus(2)'></div></div>" +
+                        "<img class='reset-button' onclick='home();' src='oloro-i.svg'  alt='reset'/>";
                     refreshScreen();
                     break;
                 case 3:
                     lifeTotals = [startingTotal, startingTotal, startingTotal];
                     document.getElementById("lc").innerHTML = "<div class='counter-ob-ts-l'><div id='p2-total' class='counter-num text-left'><p></p></div><div class='counter-bottom-ts-l counter-blue' onclick='lifeMinus(2)'></div><div class='counter-top-ts-l counter-blue' onclick='lifePlus(2)'></div></div>" +
                         "<div class='counter-ob-ts-r'><div id='p3-total' class='counter-num text-right'><p></p></div><div class='counter-top-ts-r counter-red' onclick='lifePlus(3)'></div><div class='counter-bottom-ts-r counter-red' onclick='lifeMinus(3)'></div></div>" +
-                        "<div class='counter-ob-ts-b'><div id='p1-total' class='counter-num'><p></p></div><div class='counter-top-ts-b counter-green' onclick='lifePlus(1)'></div><div class='counter-bottom-ts-b counter-green' onclick='lifeMinus(1)'></div></div>"
+                        "<div class='counter-ob-ts-b'><div id='p1-total' class='counter-num'><p></p></div><div class='counter-top-ts-b counter-green' onclick='lifePlus(1)'></div><div class='counter-bottom-ts-b counter-green' onclick='lifeMinus(1)'></div></div>" +
+                        "<img class='reset-button' onclick='home();' src='oloro-i.svg'  alt='reset'/>";
                     refreshScreen();
                     break;
                 case 4:
