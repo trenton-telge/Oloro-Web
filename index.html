@@ -161,10 +161,16 @@
             z-index: 10;
             height: calc(60vh - 3vw);
         }
-        .counter-top-ts-l, .counter-bottom-ts-r{
+        .counter-top-qs-r, .counter-top-qs-l, .counter-bottom-qs-r, .counter-bottom-qs-l {
+            width: 50%;
+            margin:0;
+            z-index: 10;
+            height: calc(50vh - 4.5vw);
+        }
+        .counter-top-ts-l, .counter-bottom-ts-r, .counter-top-qs-l, .counter-bottom-qs-r{
             border-radius: 0 25px 25px 0;
         }
-        .counter-bottom-ts-l, .counter-top-ts-r{
+        .counter-bottom-ts-l, .counter-top-ts-r, .counter-bottom-qs-l, .counter-top-qs-r{
             border-radius: 25px 0 0 25px;
         }
         .counter-top-fs, .counter-top-hs, .counter-top-ts-b{
@@ -232,6 +238,46 @@
         .counter-ob-ts-r{
             margin:3vw 3vw 0 1.5vw;
             height:calc(60% - 3vw);
+            display:flex;
+            flex-wrap: wrap;
+            align-items: center;
+            align-content: center;
+            justify-content: center;
+            width:45.5vw;
+        }
+        .counter-ob-qs-l-t{
+            margin:3vw 1.5vw 1.5vw 3vw;
+            height:calc(50% - 4.5vw);
+            display:flex;
+            flex-wrap: wrap;
+            align-items: center;
+            align-content: center;
+            justify-content: center;
+            width:45.5vw;
+        }
+        .counter-ob-qs-r-t{
+            margin:3vw 3vw 1.5vw 1.5vw;
+            height:calc(50% - 4.5vw);
+            display:flex;
+            flex-wrap: wrap;
+            align-items: center;
+            align-content: center;
+            justify-content: center;
+            width:45.5vw;
+        }
+        .counter-ob-qs-l-b{
+            margin:1.5vw 1.5vw 3vw 3vw;
+            height:calc(50% - 4.5vw);
+            display:flex;
+            flex-wrap: wrap;
+            align-items: center;
+            align-content: center;
+            justify-content: center;
+            width:45.5vw;
+        }
+        .counter-ob-qs-r-b{
+            margin:1.5vw 3vw 3vw 1.5vw;
+            height:calc(50% - 4.5vw);
             display:flex;
             flex-wrap: wrap;
             align-items: center;
@@ -339,6 +385,11 @@
                     break;
                 case 4:
                     lifeTotals = [startingTotal, startingTotal, startingTotal, startingTotal];
+                    document.getElementById("lc").innerHTML = "<div class='counter-ob-qs-l-t'><div id='p2-total' class='counter-num text-left'><p></p></div><div class='counter-bottom-qs-l counter-blue' onclick='lifeMinus(2)'></div><div class='counter-top-qs-l counter-blue' onclick='lifePlus(2)'></div></div>" +
+                        "<div class='counter-ob-qs-r-t'><div id='p3-total' class='counter-num text-right'><p></p></div><div class='counter-top-qs-r counter-red' onclick='lifePlus(3)'></div><div class='counter-bottom-qs-r counter-red' onclick='lifeMinus(3)'></div></div>" +
+                        "<div class='counter-ob-qs-l-b'><div id='p4-total' class='counter-num text-left'><p></p></div><div class='counter-bottom-qs-l counter-green' onclick='lifeMinus(4)'></div><div class='counter-top-qs-l counter-green' onclick='lifePlus(4)'></div></div>" +
+                        "<div class='counter-ob-qs-r-b'><div id='p1-total' class='counter-num text-right'><p></p></div><div class='counter-top-qs-r counter-purple' onclick='lifePlus(1)'></div><div class='counter-bottom-qs-r counter-purple' onclick='lifeMinus(1)'></div></div>" +
+                        "<img class='reset-button' onclick='home();' src='oloro-i.svg'  alt='reset'/>";
                     refreshScreen();
                     break;
                 case 5:
