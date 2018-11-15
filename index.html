@@ -10,7 +10,8 @@
             'assets': [
                 'manifest.json',
                 'favicon.ico',
-                'android-chrome-192x192.png'
+                'android-chrome-192x192.png',
+                'oloro-i.svg'
             ]
         });
     </script>
@@ -256,13 +257,23 @@
             -o-transform:rotate(-90deg);
             transform:rotate(-90deg);
         }
+        .reset-button{
+            z-index: 20;
+            position: fixed;
+            height: .5in;
+            width: .5in;
+        }
+        .reset-single{
+            left:calc(50vw - .25in);
+            top:10px;
+        }
     </style>
     <script rel="script" type="text/javascript">
-        var lifeTotals;
-        var startingTotal = 40;
-        var numPlayers = 1;
+        let lifeTotals;
+        const startingTotal = 40;
+        let numPlayers = 1;
         function refreshScreen(){
-            for(var i = 1;i<=numPlayers;i++){
+            for(let i = 1; i<=numPlayers; i++){
                 switch (i) {
                     case 1:
                         document.getElementById("p1-total").innerHTML = "<p>" + lifeTotals[i - 1].toString() + "</p>";
@@ -303,7 +314,7 @@
             switch (players) {
                 case 1:
                     lifeTotals = [startingTotal];
-                    document.getElementById("lc").innerHTML = "<div class='counter-ob-fs'><div id='p1-total' class='counter-num'><p></p></div><div class='counter-top-fs counter-green' onclick='lifePlus(1)'></div><div class='counter-bottom-fs counter-green' onclick='lifeMinus(1)'></div></div>";
+                    document.getElementById("lc").innerHTML = "<div class='counter-ob-fs'><div id='p1-total' class='counter-num'><p></p></div><div class='counter-top-fs counter-green' onclick='lifePlus(1)'></div><div class='counter-bottom-fs counter-green' onclick='lifeMinus(1)'></div></div><img class='reset-button reset-single' onclick='home();' src='oloro-i.svg'  alt='reset'/>";
                     refreshScreen();
                     break;
                 case 2:
@@ -334,6 +345,11 @@
                 default:
                     break;
             }
+        }
+        function home(){
+            document.getElementById("start").style.display = "flex";
+            document.getElementById("lc").style.display = "none";
+            document.body.style.backgroundColor = "#fffbd5";
         }
     </script>
 </head>
