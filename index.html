@@ -69,7 +69,7 @@
         }
     </script>
     <style>
-        .normalize, html, body, div, a {
+        .normalize, html, body, div, a, p, img {
             margin:0;
             padding:0;
         }
@@ -125,7 +125,49 @@
             transition: background-color 2s;
             flex-wrap: wrap;
         }
-        .counter-num{
+        #ls {
+            display:none;
+            flex-wrap: wrap;
+            justify-content: space-evenly;
+            align-items: center;
+            align-content: center;
+        }
+        .life-option-container {
+            display:flex;
+            flex-wrap: wrap;
+            justify-content: space-evenly;
+            align-items: center;
+            align-content: center;
+            width: 35vw;
+            height: 35vw;
+            max-width: 2in;
+            max-height: 2in;
+            background-color: #8ab5ca;
+            border-radius: 25px;
+            margin:3vw;
+        }
+        .life-option-dice {
+            width: 100vw;
+            display:flex;
+            flex-wrap: nowrap;
+            justify-content: center;
+            align-items: center;
+            align-content: center;
+        }
+        .life-option-dice img {
+            width: 10vw;
+            height: 10vw;
+        }
+        .half-dice {
+            max-width: 5vw;
+            max-height: 10vw;
+            overflow: hidden;
+        }
+        .life-option-container p {
+            font-size: 10vw;
+            max-font-size: 1in;
+        }
+        .counter-num {
             pointer-events:none;
             z-index: 20;
             position: absolute;
@@ -320,7 +362,7 @@
     </style>
     <script rel="script" type="text/javascript">
         let lifeTotals;
-        const startingTotal = 40;
+        let startingTotal = 40;
         let numPlayers = 1;
         function refreshScreen(){
             for(let i = 1; i<=numPlayers; i++){
@@ -356,12 +398,20 @@
             lifeTotals[playerID -1]--;
             refreshScreen()
         }
-        function displayCounter(players) {
+        function displayLifeSelector(players){
+            numPlayers = players;
             document.getElementById("start").style.display = "none";
+            document.getElementById("ls").style.display = "flex";
+        }
+        function setStartingLife(life){
+            startingTotal = life;
+            displayCounter();
+        }
+        function displayCounter() {
+            document.getElementById("ls").style.display = "none";
             document.getElementById("lc").style.display = "flex";
             document.body.style.backgroundColor = "#fff";
-            numPlayers = players;
-            switch (players) {
+            switch (numPlayers) {
                 case 1:
                     lifeTotals = [startingTotal];
                     document.getElementById("lc").innerHTML = "<div class='counter-ob-fs'><div id='p1-total' class='counter-num'><p></p></div><div class='counter-top-fs counter-green' onclick='lifePlus(1)'></div><div class='counter-bottom-fs counter-green' onclick='lifeMinus(1)'></div></div>" +
@@ -413,13 +463,19 @@
 </head>
 <body>
 <div id="start" class="normalize full-screen">
-    <h3>How many players?</h3>
-    <a class="player-count-button" onclick="displayCounter(1)"><p>1</p></a>
-    <a class="player-count-button" onclick="displayCounter(2)"><p>2</p></a>
-    <a class="player-count-button" onclick="displayCounter(3)"><p>3</p></a>
-    <a class="player-count-button" onclick="displayCounter(4)"><p>4</p></a>
+    <h3 class="normalize">How many players?</h3>
+    <a class="player-count-button" onclick="displayLifeSelector(1)"><p>1</p></a>
+    <a class="player-count-button" onclick="displayLifeSelector(2)"><p>2</p></a>
+    <a class="player-count-button" onclick="displayLifeSelector(3)"><p>3</p></a>
+    <a class="player-count-button" onclick="displayLifeSelector(4)"><p>4</p></a>
     <!--<a class="player-count-button" onclick="displayCounter(5)"><p>5</p></a>
     <a class="player-count-button" onclick="displayCounter(6)"><p>6</p></a>-->
+</div>
+<div id="ls" class="normalize full-screen">
+    <h3>Starting life?</h3>
+    <div class="life-option-container" onclick="setStartingLife(20)" ><div class="life-option-dice"><img src="d20.svg" class="d20" alt="20"/></div><p>20</p></div>
+    <div class="life-option-container" onclick="setStartingLife(30)" ><div class="life-option-dice"><img src="d20.svg" class="d20" alt="20 + "/><div class="half-dice"><img src="d20.svg" class="d20" alt="10"/></div></div><p>30</p></div>
+    <div class="life-option-container" onclick="setStartingLife(40)" ><div class="life-option-dice"><img src="d20.svg" class="d20" alt="20 + "/><img src="d20.svg" class="d20" alt="20"/></div><p>40</p></div>
 </div>
 <div id="lc" class="normalize full-screen"></div>
 </body>
