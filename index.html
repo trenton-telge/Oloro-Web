@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <title>Oloro</title>
-    <script src="upup.min.js"></script>
+    <script type="text/javascript" src="upup.min.js"></script>
     <script>
         UpUp.start({
             'content-url': 'index.html',
@@ -50,6 +50,7 @@
     <meta name="msapplication-TileImage" content="mstile-144x144.png">
     <meta name="theme-color" content="#fffbd5">
     <link href="https://fonts.googleapis.com/css?family=Expletus+Sans" rel="stylesheet">
+    <script type="text/javascript" src="nosleep.min.js"></script>
     <script type="application/ld+json">
         {
             "@context": "http://schema.org/",
@@ -414,31 +415,31 @@
             switch (numPlayers) {
                 case 1:
                     lifeTotals = [startingTotal];
-                    document.getElementById("lc").innerHTML = "<div class='counter-ob-fs'><div id='p1-total' class='counter-num'><p></p></div><div class='counter-top-fs counter-green' onclick='lifePlus(1)'></div><div class='counter-bottom-fs counter-green' onclick='lifeMinus(1)'></div></div>" +
+                    document.getElementById("lc").innerHTML = "<div class='counter-ob counter-ob-fs'><div id='p1-total' class='counter-num'><p></p></div><div class='counter-top-fs counter-green' onclick='lifePlus(1)'></div><div class='counter-bottom-fs counter-green' onclick='lifeMinus(1)'></div></div>" +
                         "<img class='reset-button reset-single' onclick='home();' src='oloro-i.svg'  alt='reset'/>";
                     refreshScreen();
                     break;
                 case 2:
                     lifeTotals = [startingTotal, startingTotal];
-                    document.getElementById("lc").innerHTML = "<div class='counter-ob-hs-top'><div id='p1-total' class='counter-num text-inverse'><p></p></div><div class='counter-top-hs counter-green' onclick='lifeMinus(1)'></div><div class='counter-bottom-hs counter-green' onclick='lifePlus(1)'></div></div>" +
-                        "<div class='counter-ob-hs-bottom'><div id='p2-total' class='counter-num'><p></p></div><div class='counter-top-hs counter-red' onclick='lifePlus(2)'></div><div class='counter-bottom-hs counter-red' onclick='lifeMinus(2)'></div></div>" +
+                    document.getElementById("lc").innerHTML = "<div class='counter-ob counter-ob-hs-top'><div id='p1-total' class='counter-num text-inverse'><p></p></div><div class='counter-top-hs counter-green' onclick='lifeMinus(1)'></div><div class='counter-bottom-hs counter-green' onclick='lifePlus(1)'></div></div>" +
+                        "<div class='counter-ob counter-ob-hs-bottom'><div id='p2-total' class='counter-num'><p></p></div><div class='counter-top-hs counter-red' onclick='lifePlus(2)'></div><div class='counter-bottom-hs counter-red' onclick='lifeMinus(2)'></div></div>" +
                         "<img class='reset-button' onclick='home();' src='oloro-i.svg'  alt='reset'/>";
                     refreshScreen();
                     break;
                 case 3:
                     lifeTotals = [startingTotal, startingTotal, startingTotal];
-                    document.getElementById("lc").innerHTML = "<div class='counter-ob-ts-l'><div id='p2-total' class='counter-num text-left'><p></p></div><div class='counter-bottom-ts-l counter-blue' onclick='lifeMinus(2)'></div><div class='counter-top-ts-l counter-blue' onclick='lifePlus(2)'></div></div>" +
-                        "<div class='counter-ob-ts-r'><div id='p3-total' class='counter-num text-right'><p></p></div><div class='counter-top-ts-r counter-red' onclick='lifePlus(3)'></div><div class='counter-bottom-ts-r counter-red' onclick='lifeMinus(3)'></div></div>" +
-                        "<div class='counter-ob-ts-b'><div id='p1-total' class='counter-num'><p></p></div><div class='counter-top-ts-b counter-green' onclick='lifePlus(1)'></div><div class='counter-bottom-ts-b counter-green' onclick='lifeMinus(1)'></div></div>" +
+                    document.getElementById("lc").innerHTML = "<div class='counter-ob counter-ob-ts-l'><div id='p2-total' class='counter-num text-left'><p></p></div><div class='counter-bottom-ts-l counter-blue' onclick='lifeMinus(2)'></div><div class='counter-top-ts-l counter-blue' onclick='lifePlus(2)'></div></div>" +
+                        "<div class='counter-ob counter-ob-ts-r'><div id='p3-total' class='counter-num text-right'><p></p></div><div class='counter-top-ts-r counter-red' onclick='lifePlus(3)'></div><div class='counter-bottom-ts-r counter-red' onclick='lifeMinus(3)'></div></div>" +
+                        "<div class='counter-ob counter-ob-ts-b'><div id='p1-total' class='counter-num'><p></p></div><div class='counter-top-ts-b counter-green' onclick='lifePlus(1)'></div><div class='counter-bottom-ts-b counter-green' onclick='lifeMinus(1)'></div></div>" +
                         "<img class='reset-button reset-third' onclick='home();' src='oloro-i.svg'  alt='reset'/>";
                     refreshScreen();
                     break;
                 case 4:
                     lifeTotals = [startingTotal, startingTotal, startingTotal, startingTotal];
-                    document.getElementById("lc").innerHTML = "<div class='counter-ob-qs-l-t'><div id='p2-total' class='counter-num text-left'><p></p></div><div class='counter-bottom-qs-l counter-blue' onclick='lifeMinus(2)'></div><div class='counter-top-qs-l counter-blue' onclick='lifePlus(2)'></div></div>" +
-                        "<div class='counter-ob-qs-r-t'><div id='p3-total' class='counter-num text-right'><p></p></div><div class='counter-top-qs-r counter-red' onclick='lifePlus(3)'></div><div class='counter-bottom-qs-r counter-red' onclick='lifeMinus(3)'></div></div>" +
-                        "<div class='counter-ob-qs-l-b'><div id='p4-total' class='counter-num text-left'><p></p></div><div class='counter-bottom-qs-l counter-green' onclick='lifeMinus(4)'></div><div class='counter-top-qs-l counter-green' onclick='lifePlus(4)'></div></div>" +
-                        "<div class='counter-ob-qs-r-b'><div id='p1-total' class='counter-num text-right'><p></p></div><div class='counter-top-qs-r counter-purple' onclick='lifePlus(1)'></div><div class='counter-bottom-qs-r counter-purple' onclick='lifeMinus(1)'></div></div>" +
+                    document.getElementById("lc").innerHTML = "<div class='counter-ob counter-ob-qs-l-t'><div id='p2-total' class='counter-num text-left'><p></p></div><div class='counter-bottom-qs-l counter-blue' onclick='lifeMinus(2)'></div><div class='counter-top-qs-l counter-blue' onclick='lifePlus(2)'></div></div>" +
+                        "<div class='counter-ob counter-ob-qs-r-t'><div id='p3-total' class='counter-num text-right'><p></p></div><div class='counter-top-qs-r counter-red' onclick='lifePlus(3)'></div><div class='counter-bottom-qs-r counter-red' onclick='lifeMinus(3)'></div></div>" +
+                        "<div class='counter-ob counter-ob-qs-l-b'><div id='p4-total' class='counter-num text-left'><p></p></div><div class='counter-bottom-qs-l counter-green' onclick='lifeMinus(4)'></div><div class='counter-top-qs-l counter-green' onclick='lifePlus(4)'></div></div>" +
+                        "<div class='counter-ob counter-ob-qs-r-b'><div id='p1-total' class='counter-num text-right'><p></p></div><div class='counter-top-qs-r counter-purple' onclick='lifePlus(1)'></div><div class='counter-bottom-qs-r counter-purple' onclick='lifeMinus(1)'></div></div>" +
                         "<img class='reset-button' onclick='home();' src='oloro-i.svg'  alt='reset'/>";
                     refreshScreen();
                     break;
@@ -458,6 +459,16 @@
             document.getElementById("start").style.display = "flex";
             document.getElementById("lc").style.display = "none";
             document.body.style.backgroundColor = "#fffbd5";
+        }
+        function requestWakeLock(){
+            // Request as promise
+            navigator.getWakeLock("screen").then(function(wakeLock) {
+                const request = wakeLock.createRequest();
+            });
+            // Mozilla documented method
+            const mozlock = window.navigator.requestWakeLock('screen');
+            // nosleep.js backup
+            new NoSleep().enable();
         }
     </script>
 </head>
