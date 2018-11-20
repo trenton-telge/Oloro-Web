@@ -465,11 +465,10 @@
             navigator.getWakeLock("screen").then(function(wakeLock) {
                 const request = wakeLock.createRequest();
             });
-            // Mozilla documented method
-            const mozlock = window.navigator.requestWakeLock('screen');
             // nosleep.js backup
             new NoSleep().enable();
         }
+        document.addEventListener('click', requestWakeLock, false);
     </script>
 </head>
 <body>
