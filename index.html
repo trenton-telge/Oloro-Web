@@ -58,17 +58,7 @@
             "@type": "SoftwareApplication",
             "name": "Oloro",
             "applicationCategory": "Game",
-            "operatingSystem": "Android",
-            "aggregateRating": {
-                "@type": "AggregateRating",
-                "ratingValue": "",
-                "ratingCount": ""
-            },
-            "offers": {
-                "@type": "Offer",
-                "priceCurrency": "USD",
-                "price": "0.00"
-            }
+            "operatingSystem": "Android"
         }
     </script>
     <style>
@@ -114,7 +104,7 @@
         }
         .player-count-button p {
             color: black;
-            font-size: 30vw;
+            font-size: calc(36pt + 7vw);
             font-max-size: 80%;
         }
         h3 {
@@ -158,16 +148,16 @@
             align-content: center;
         }
         .life-option-dice img {
-            width: 10vw;
-            height: 10vw;
+            width: calc(75px + .5vw);
+            height: calc(75px + .5vw);
         }
         .half-dice {
-            max-width: 5vw;
-            max-height: 10vw;
+            max-width: calc(37.5px + .25vw);
+            max-height: calc(75px + .5vw);
             overflow: hidden;
         }
         .life-option-container p {
-            font-size: 10vw;
+            font-size: calc(12pt + 1vw);
             max-font-size: 1in;
         }
         .counter-num {
@@ -185,8 +175,7 @@
         .counter-num p {
             pointer-events:none;
             color: black;
-            font-size: 30vw;
-            font-max-size: 80%;
+            font-size: calc(15vw + 10vh);
         }
         @media screen and (max-width: 3in){
             .counter-num p, .player-count-button p {
@@ -230,6 +219,9 @@
         .counter-green{background-color: palegreen;}
         .counter-orange{background-color: darkgoldenrod;}
         .counter-yellow{background-color: khaki;}
+        .counter-red:hover, .counter-purple:hover, .counter-blue:hover, .counter-green:hover, .counter-orange:hover, .counter-yellow:hover{
+            filter: brightness(90%);
+        }
         .counter-ob-fs {
             margin:3vw;
             height: calc(100% - 6vw);
@@ -330,24 +322,6 @@
             justify-content: center;
             width:45.5vw;
         }
-        .text-inverse{
-            -webkit-transform:rotate(-180deg);
-            -moz-transform:rotate(-180deg);
-            -o-transform:rotate(-180deg);
-            transform:rotate(-180deg);
-        }
-        .text-left{
-            -webkit-transform:rotate(-270deg);
-            -moz-transform:rotate(-270deg);
-            -o-transform:rotate(-270deg);
-            transform:rotate(-270deg);
-        }
-        .text-right{
-            -webkit-transform:rotate(-90deg);
-            -moz-transform:rotate(-90deg);
-            -o-transform:rotate(-90deg);
-            transform:rotate(-90deg);
-        }
         .reset-button{
             z-index: 20;
             position: fixed;
@@ -359,8 +333,29 @@
         .reset-single{
             top:10px;
         }
-        .reset-third{
-            top:calc(60vh - .25in);
+        .reset-third {
+            top: calc(60vh - .25in);
+        }
+
+        @media (orientation: portrait) {
+            .text-inverse{
+                -webkit-transform:rotate(-180deg);
+                -moz-transform:rotate(-180deg);
+                -o-transform:rotate(-180deg);
+                transform:rotate(-180deg);
+            }
+            .text-left{
+                -webkit-transform:rotate(-270deg);
+                -moz-transform:rotate(-270deg);
+                -o-transform:rotate(-270deg);
+                transform:rotate(-270deg);
+            }
+            .text-right{
+                -webkit-transform:rotate(-90deg);
+                -moz-transform:rotate(-90deg);
+                -o-transform:rotate(-90deg);
+                transform:rotate(-90deg);
+            }
         }
         </style>
     <script rel="script" type="text/javascript">
