@@ -106,12 +106,20 @@
             color: black;
             font-size: calc(36pt + 7vw);
             font-max-size: 80%;
+            -webkit-user-select: none;
+            -moz-user-select: none;
+            -ms-user-select: none;
+            user-select: none;
         }
         h3 {
             color:black;
             font-size:6vw;
             width: 100vw;
             text-align:center;
+            -webkit-user-select: none;
+            -moz-user-select: none;
+            -ms-user-select: none;
+            user-select: none;
         }
         #lc {
             display:none;
@@ -150,6 +158,12 @@
         .life-option-dice img {
             width: calc(50px + .2vw);
             height: calc(50px + .2vw);
+            user-drag: none;
+            user-select: none;
+            -moz-user-select: none;
+            -webkit-user-drag: none;
+            -webkit-user-select: none;
+            -ms-user-select: none;
         }
         .half-dice {
             max-width: calc(25px + .1vw);
@@ -159,6 +173,10 @@
         .life-option-container p {
             font-size: calc(24pt + 3vw);
             max-font-size: 1in;
+            -webkit-user-select: none;
+            -moz-user-select: none;
+            -ms-user-select: none;
+            user-select: none;
         }
         .counter-num {
             pointer-events:none;
@@ -176,6 +194,10 @@
             pointer-events:none;
             color: black;
             font-size: calc(15vw + 10vh);
+            -webkit-user-select: none;
+            -moz-user-select: none;
+            -ms-user-select: none;
+            user-select: none;
         }
         @media screen and (min-width: 1201px){
             .life-option-dice img {
@@ -190,6 +212,7 @@
             .life-option-container p {
                 font-size: calc(24pt + 2vw);
                 max-font-size: 1in;
+
             }
             .counter-num p {
                 pointer-events:none;
@@ -364,6 +387,12 @@
             width: .5in;
             left:calc(50vw - .25in);
             top:calc(50vh - .25in);
+            user-drag: none;
+            user-select: none;
+            -moz-user-select: none;
+            -webkit-user-drag: none;
+            -webkit-user-select: none;
+            -ms-user-select: none;
         }
         .reset-single{
             top:10px;
