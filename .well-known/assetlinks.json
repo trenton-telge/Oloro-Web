@@ -1,0 +1,5 @@
+[{
+  "relation": ["delegate_permission/common.handle_all_urls"],
+  "target" : { "namespace": "android_app", "package_name": "com.eventhorizonwebdesign.oloro",
+    "sha256_cert_fingerprints": ["75:32:C2:5F:9B:1D:A6:6C:63:31:82:E9:23:D3:D8:21:A2:CD:A0:48:68:D7:3F:5F:6C:3A:7E:6A:A1:36:E6:D0"] }
+}]
